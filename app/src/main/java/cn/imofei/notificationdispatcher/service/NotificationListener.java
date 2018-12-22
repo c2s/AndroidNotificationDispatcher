@@ -1,4 +1,4 @@
-package cn.dxkite.notificationdispatcher.service;
+package cn.imofei.notificationdispatcher.service;
 
 import android.app.Notification;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.util.Log;
 
-import cn.dxkite.notificationdispatcher.Message;
-import cn.dxkite.notificationdispatcher.R;
+import cn.imofei.notificationdispatcher.Message;
+import cn.imofei.notificationdispatcher.R;
 
 public class NotificationListener extends NotificationListenerService {
     final static String TAG = "NotificationListener";
@@ -30,6 +30,7 @@ public class NotificationListener extends NotificationListenerService {
     public void onNotificationPosted(StatusBarNotification sbn) {
         Log.d(TAG, "onNotificationPosted");
         String packageName = sbn.getPackageName();
+        Log.d(TAG, packageName);
         Message.Type type;
         if ("com.eg.android.AlipayGphone".equals(packageName)) {
             type = Message.Type.Alipay;

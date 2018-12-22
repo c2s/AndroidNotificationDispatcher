@@ -1,4 +1,4 @@
-package cn.dxkite.notificationdispatcher.service;
+package cn.imofei.notificationdispatcher.service;
 
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;

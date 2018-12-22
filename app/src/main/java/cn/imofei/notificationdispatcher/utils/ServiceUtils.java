@@ -1,4 +1,4 @@
-package cn.dxkite.notificationdispatcher.utils;
+package cn.imofei.notificationdispatcher.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;

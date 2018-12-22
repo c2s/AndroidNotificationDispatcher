@@ -1,4 +1,4 @@
-package cn.dxkite.notificationdispatcher.activity;
+package cn.imofei.notificationdispatcher.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,9 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import cn.dxkite.notificationdispatcher.R;
-import cn.dxkite.notificationdispatcher.service.NotificationListener;
-import cn.dxkite.notificationdispatcher.utils.ServiceUtils;
+import cn.imofei.notificationdispatcher.R;
+import cn.imofei.notificationdispatcher.service.NotificationListener;
+import cn.imofei.notificationdispatcher.utils.ServiceUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SharedPreferences preference = getSharedPreferences("config", MODE_PRIVATE);
-        textUrl.setText(preference.getString("url", "http://192.168.0.109/paymentCallback"));
-        textToken.setText(preference.getString("token", "dxkite"));
-        textSecret.setText(preference.getString("secret", "dxkite"));
+        textUrl.setText(preference.getString("url", "http://192.168.0.101/addons/pay/api/notify1"));
+        textToken.setText(preference.getString("token", "Test111"));
+        textSecret.setText(preference.getString("secret", "Test111"));
 
         if (!isNotificationEnabled()) {
             new AlertDialog.Builder(this)

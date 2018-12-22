@@ -1,4 +1,4 @@
-package cn.dxkite.notificationdispatcher;
+package cn.imofei.notificationdispatcher;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -44,9 +44,9 @@ public class Message {
                 .build();
         String json = JSON.toJSONString(message);
         SharedPreferences preference = context.getSharedPreferences("config", MODE_PRIVATE);
-        String url = preference.getString("url", "http://192.168.0.109/paymentCallback");
-        String token = preference.getString("token", "dxkite");
-        String secret = preference.getString("secret", "dxkite");
+        String url = preference.getString("url", "http://192.168.0.101/addons/pay/api/notify1");
+        String token = preference.getString("token", "imofei");
+        String secret = preference.getString("secret", "123456");
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), json);
         Request request = new Request.Builder()
                 .url(url)
