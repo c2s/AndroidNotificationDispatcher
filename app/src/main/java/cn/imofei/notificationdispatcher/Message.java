@@ -44,14 +44,16 @@ public class Message {
                 .build();
         String json = JSON.toJSONString(message);
         SharedPreferences preference = context.getSharedPreferences("config", MODE_PRIVATE);
-        String url = preference.getString("url", "http://192.168.0.101/addons/pay/api/notify1");
-        String token = preference.getString("token", "imofei");
-        String secret = preference.getString("secret", "123456");
+        String url = preference.getString("url", "http://pay.qingsonge.com/addons/pay/api/notify1");
+        String token = preference.getString("token", "test");
+        String secret = preference.getString("secret", "test");
+        String device_id = preference.getString("secret", "device_id");
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), json);
         Request request = new Request.Builder()
                 .url(url)
-                .addHeader("Payment-Token", token)
-                .addHeader("Payment-Secret", secret)
+                .addHeader("token", token)
+                .addHeader("secret", secret)
+                .addHeader("device_id", device_id)
                 .post(requestBody)
                 .build();
         Call call = client.newCall(request);

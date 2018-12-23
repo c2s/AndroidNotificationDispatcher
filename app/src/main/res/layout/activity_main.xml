@@ -6,57 +6,82 @@
     android:layout_height="match_parent"
 
     android:orientation="vertical"
+    android:layout_marginTop="10dp"
     tools:context=".activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="149dp"
+        android:orientation="horizontal"
+        app:srcCompat="@drawable/ic_launcher320"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
         android:orientation="vertical">
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/request_token"
+            style="@style/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:hint="@string/token"
+            android:inputType="text"
+            android:selectAllOnFocus="false"
+            android:singleLine="true"
+            android:textAppearance="@style/QMUITextAppearance.Title"
+            android:textColorLink="@color/colorWelcome" />
 
-            <EditText
-                android:id="@+id/request_url"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/url"
-                android:inputType="textUri" />
-
-            <EditText
-                android:id="@+id/request_token"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/token"
-                android:inputType="text"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/request_secret"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/secret"
-                android:inputType="text"
-                android:singleLine="true" />
-        </LinearLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/request_secret"
+            style="@style/EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:hint="@string/secret"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textAppearance="@style/QMUITextAppearance.GridItem"
+            android:textColorLink="@color/colorWelcome" />
 
+        <EditText
+            android:id="@+id/request_device_id"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:hint="@string/device_id"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textAppearance="@style/QMUITextAppearance.GridItem"
+            android:textColorLink="@color/colorWelcome" />
 
-            <Button
-                android:id="@+id/params_setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/params_setting" />
-        </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        style="@style/button_wrapper_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            android:id="@+id/params_setting"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="@string/params_setting"
+            android:textColorLink="@color/colorPrimary"
+            app:qmui_isRadiusAdjustBounds="true" />
+    </RelativeLayout>
+
 </LinearLayout>

@@ -21,8 +21,9 @@ import cn.imofei.notificationdispatcher.utils.ServiceUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText textUrl, textToken, textSecret;
+    EditText textToken, textSecret, textDeviceId;
     final static String TAG = "Notification";
+    final static String API_URL = "http://pay.qingsonge.com/addons/pay/api/notify1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button start = findViewById(R.id.params_setting);
 
-        textUrl = findViewById(R.id.request_url);
+        textDeviceId = findViewById(R.id.request_device_id);
         textToken = findViewById(R.id.request_token);
         textSecret = findViewById(R.id.request_secret);
 
@@ -39,18 +40,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences preferences = getApplicationContext().getSharedPreferences("config", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("url", textUrl.getText().toString());
+                editor.putString("url", API_URL);
                 editor.putString("token", textToken.getText().toString());
                 editor.putString("secret", textSecret.getText().toString());
+                editor.putString("device_id", textDeviceId.getText().toString());
                 editor.apply();
                 Toast.makeText(getApplicationContext(), R.string.setting_save_success, Toast.LENGTH_SHORT).show();
             }
         });
 
         SharedPreferences preference = getSharedPreferences("config", MODE_PRIVATE);
-        textUrl.setText(preference.getString("url", "http://192.168.0.101/addons/pay/api/notify1"));
-        textToken.setText(preference.getString("token", "Test111"));
-        textSecret.setText(preference.getString("secret", "Test111"));
+        textToken.setText(preference.getString("token", "123456"));
+        textSecret.setText(preference.getString("secret", "123456"));
+        textDeviceId.setText(preference.getString("device_id", "1"));
 
         if (!isNotificationEnabled()) {
             new AlertDialog.Builder(this)

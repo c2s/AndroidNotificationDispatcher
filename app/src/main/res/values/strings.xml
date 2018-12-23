@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">易安支付</string>
-    <string name="params_setting">设置参数</string>
+    <string name="params_setting">确定</string>
     <string name="start">启动</string>
     <string name="system_setting">系统设置</string>
-    <string name="secret">推送Secret，Payment-Secret</string>
-    <string name="token">推送Token，Payment-Token</string>
+    <string name="secret">Secret</string>
+    <string name="device_id">设备ID</string>
+    <string name="token">Token</string>
     <string name="url">请输入易安支付提供的支付API地址</string>
     <string name="payment_listening">收费通知正在监控中</string>
     <string name="payment_notification">收费通知</string>
