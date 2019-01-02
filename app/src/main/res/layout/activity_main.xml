@@ -20,7 +20,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <EditText
@@ -83,5 +83,11 @@
             android:textColorLink="@color/colorPrimary"
             app:qmui_isRadiusAdjustBounds="true" />
     </RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.design.widget.TextInputLayout>
 
 </LinearLayout>

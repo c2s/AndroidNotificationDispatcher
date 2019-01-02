@@ -45,15 +45,15 @@ public class Message {
         String json = JSON.toJSONString(message);
         SharedPreferences preference = context.getSharedPreferences("config", MODE_PRIVATE);
         String url = preference.getString("url", "http://pay.qingsonge.com/addons/pay/api/notify1");
-        String token = preference.getString("token", "test");
-        String secret = preference.getString("secret", "test");
-        String device_id = preference.getString("secret", "device_id");
+        String token = preference.getString("token", "TEST");
+        String secret = preference.getString("secret", "TEST");
+        String device_id = preference.getString("device_id", "TEST");
         RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), json);
         Request request = new Request.Builder()
                 .url(url)
                 .addHeader("token", token)
                 .addHeader("secret", secret)
-                .addHeader("device_id", device_id)
+                .addHeader("device", device_id)
                 .post(requestBody)
                 .build();
         Call call = client.newCall(request);

@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SharedPreferences preference = getSharedPreferences("config", MODE_PRIVATE);
-        textToken.setText(preference.getString("token", "123456"));
-        textSecret.setText(preference.getString("secret", "123456"));
-        textDeviceId.setText(preference.getString("device_id", "1"));
+        textToken.setText(preference.getString("token", "TEST"));
+        textSecret.setText(preference.getString("secret", "TEST"));
+        textDeviceId.setText(preference.getString("device_id", "TEST"));
 
         if (!isNotificationEnabled()) {
             new AlertDialog.Builder(this)
